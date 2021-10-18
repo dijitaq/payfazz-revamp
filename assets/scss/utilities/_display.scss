@@ -1,0 +1,25 @@
+
+/**
+ * Displays
+ */
+.d-flex {
+ display: -webkit-box !important;
+ display: -ms-flexbox !important;
+ display: flex !important;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-block {
+ display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.d-none {
+  display: none !important;
+}

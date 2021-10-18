@@ -1,0 +1,51 @@
+/* Heavy */
+@font-face {
+  font-family: 'Fazz Neue';
+  src: url('../fonts/FazzNeue-Heavy.eot');
+  src: url('../fonts/FazzNeue-Heavy.eot') format('embedded-opentype'),
+       url('../fonts/FazzNeue-Heavy.woff2') format('woff2'),
+       url('../fonts/FazzNeue-Heavy.woff') format('woff'),
+       url('../fonts/FazzNeue-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Fazz Neue';
+  src: url('../fonts/FazzNeue-Bold.eot');
+  src: url('../fonts/FazzNeue-Bold.eot') format('embedded-opentype'),
+       url('../fonts/FazzNeue-Bold.woff2') format('woff2'),
+       url('../fonts/FazzNeue-Bold.woff') format('woff'),
+       url('../fonts/FazzNeue-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Fazz Neue';
+  src: url('../fonts/FazzNeue-Medium.eot');
+  src: url('../fonts/FazzNeue-Medium.eot') format('embedded-opentype'),
+       url('../fonts/FazzNeue-Medium.woff2') format('woff2'),
+       url('../fonts/FazzNeue-Medium.woff') format('woff'),
+       url('../fonts/FazzNeue-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reguler */
+@font-face {
+  font-family: 'Fazz Neue';
+  src: url('../fonts/FazzNeue-Regular.eot');
+  src: url('../fonts/FazzNeue-Regular.eot') format('embedded-opentype'),
+       url('../fonts/FazzNeue-Regular.woff2') format('woff2'),
+       url('../fonts/FazzNeue-Regular.woff') format('woff'),
+       url('../fonts/FazzNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
