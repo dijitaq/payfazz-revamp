@@ -363,9 +363,8 @@ template {
   --pz-color-green: #31B057;
 }
 
-/**
- * Displays
- */
+/* Displays
+** ------------------------------------ */
 .d-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -676,16 +675,22 @@ h4,
 h5,
 h6 {
   margin: 0;
-  line-height: 125%;
+  line-height: 1.25;
   font-weight: normal;
 }
 
 /* Paragraf
 ** ------------------------------------ */
 p {
-  line-height: 150%;
+  line-height: 1.5;
   margin: 0;
   letter-spacing: 0.01em;
+}
+
+/* Paragraf
+** ------------------------------------ */
+li {
+  line-height: 1.5;
 }
 
 /* Strong and Bold
@@ -710,7 +715,7 @@ a {
   color: inherit;
   display: inline-block;
   vertical-align: middle;
-  line-height: 150%;
+  line-height: 1.5;
 }
 
 a,
@@ -1029,6 +1034,12 @@ a:active {
   background: url(../img/masteragen/icon-menu-arrow-down.svg) no-repeat center;
 }
 
+.icon-menu-arrow-down-white {
+  width: 12px;
+  height: 12px;
+  background: url(../img/masteragen/icon-menu-arrow-down-white.svg) no-repeat center;
+}
+
 [class^=icon-payfazz-socmed] {
   width: 16px;
   height: 16px;
@@ -1081,10 +1092,6 @@ a:active {
   background-size: contain;
 }
 
-#header {
-  display: none;
-}
-
 /* HEADINGS
 ** ------------------------------------ */
 h4 {
@@ -1118,10 +1125,16 @@ h4 {
   margin-right: 10px;
   position: relative;
 }
+.main-header__navigation > li > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .main-header__navigation > li > a {
   color: #FFFFFF;
 }
-.main-header__navigation > li.menu-item-has-children ul {
+.main-header__navigation > li.menu-item-has-children .dropdown-menu {
+  display: none;
   list-style-type: none;
   background-color: #FFFFFF;
   margin: 0;
@@ -1133,17 +1146,26 @@ h4 {
   left: 0;
   top: 60px;
 }
-.main-header__navigation > li.menu-item-has-children ul li a {
-  background-color: #F5F5F5;
+.main-header__navigation > li.menu-item-has-children .dropdown-menu.show {
+  display: block;
+}
+.main-header__navigation > li.menu-item-has-children .dropdown-menu li a {
+  display: block;
   padding-left: 56px;
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.main-header__navigation > li.menu-item-has-children ul li a span {
+.main-header__navigation > li.menu-item-has-children .dropdown-menu li a:hover {
+  background-color: #F5F5F5;
+}
+.main-header__navigation > li.menu-item-has-children .dropdown-menu li a .description {
   font-size: 15px;
   display: block;
   width: 300px;
+}
+.main-header__navigation > li.pll-parent-menu-item ul a {
+  padding-left: 20px !important;
 }
 
 /* Footer
@@ -1192,14 +1214,38 @@ h4 {
 
 .main-footer__navigation {
   list-style-type: none;
+  display: block;
   margin: 0;
   padding: 0;
+}
+.main-footer__navigation.main-footer__navigation--inline {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 .main-footer__navigation.main-footer__navigation--inline li {
   margin-bottom: 0;
 }
+.main-footer__navigation.main-footer__navigation--secondary {
+  margin-right: -30px;
+}
+.main-footer__navigation.main-footer__navigation--secondary li {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.main-footer__navigation.main-footer__navigation--share {
+  margin-left: -13px;
+}
+.main-footer__navigation.main-footer__navigation--share li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .main-footer__navigation li {
   margin-bottom: 16px;
+}
+
+.widget__title--mb-26 {
+  margin-bottom: 26px;
 }
 
 .widget__title--mb-29 {
@@ -1295,7 +1341,7 @@ h4 {
 }
 @media (min-width: 1440px) {
   .product-navigation {
-    left: 1320px;
+    left: calc(100vw - 200px);
   }
 }
 /*# sourceMappingURL=main.css.map */

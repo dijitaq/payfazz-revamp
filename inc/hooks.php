@@ -11,7 +11,7 @@ function defer_parsing_of_js($url) {
 /** -----------------------------------------------------------------------
  * Add description to menu
  * ----------------------------------------------------------------------- */
-class Menu_With_Description extends Walker_Nav_Menu {
+class Menu_With_Description extends WP_Bootstrap_Navwalker {
   function start_el( &$output, $item, $depth = 0, $args = NULL, $id = 0 ) {
       global $wp_query;
       $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -33,7 +33,11 @@ class Menu_With_Description extends Walker_Nav_Menu {
       $item_output = $args->before;
       $item_output .= '<a'. $attributes .'>';
       $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-      $item_output .= '<br /><span class="sub">' . $item->description . '</span>';
+      
+      if ($item->description != "") {
+        $item_output .= '<br /><span class="sub">' . $item->description . '</span>';
+      }
+
       $item_output .= '</a>';
       $item_output .= $args->after;
 
@@ -48,12 +52,12 @@ function add_button_sub_menu( $output, $item, $depth, $args ){
   //Only add class to 'top level' items on the 'primary' menu.
   if( 'header-payfazz' == $args->theme_location || 'masteragen-header' == $args->theme_location || 'agen-header' == $args->theme_location ){
     if (in_array("menu-item-has-children", $item->classes)) {
-      $output .='<button><i class="icon-menu-arrow-down"></i></button>';
+      $output .='<button [data-bs-toggle="popover"]><i class="icon-menu-arrow-down-white"></i></button>';
     }
   }
   return $output;
 }
-add_filter( 'walker_nav_menu_start_el', 'add_button_sub_menu', 10, 4);
+//add_filter( 'walker_nav_menu_start_el', 'add_button_sub_menu', 10, 4);
 
 
 /** -----------------------------------------------------------------------

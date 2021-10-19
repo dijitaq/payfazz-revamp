@@ -14,16 +14,22 @@ h4,
 h5,
 h6 {
   margin: 0;
-  line-height: 125%;
+  line-height: 1.25;
   font-weight: normal;
 }
 
 /* Paragraf
 ** ------------------------------------ */
 p {
-  line-height: 150%;
+  line-height: 1.5;
   margin: 0;
   letter-spacing: 0.01em;
+}
+
+/* Paragraf
+** ------------------------------------ */
+li {
+  line-height: 1.5;
 }
 
 /* Strong and Bold
@@ -44,7 +50,7 @@ a {
   color: inherit;
   display: inline-block;
   vertical-align: middle;
-  line-height: 150%;
+  line-height: 1.5;
 }
 a,
 a:hover,

@@ -1,6 +1,8 @@
 <?php
 
 require_once( get_template_directory() . '/inc/setup-theme.php' );
+require_once( get_template_directory() . '/inc/wp_bootstrap_navwalker.php' );
+require_once( get_template_directory() . '/inc/wp_bootstrap_navwalker_footer.php' );
 require_once( get_template_directory() . '/inc/enqueue-script.php' );
 require_once( get_template_directory() . '/inc/settings/index.php' );
 require_once( get_template_directory() . '/inc/post-type.php' );

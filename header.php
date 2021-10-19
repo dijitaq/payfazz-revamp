@@ -26,7 +26,7 @@
                 'menu_class'      => 'main-header__navigation main-header__navigation--inline d-flex',
                 'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                 'depth'           => 2,
-                'walker'          => $walker,
+                'walker'          => new WP_Bootstrap_Navwalker()
               );
               wp_nav_menu($args);
             }

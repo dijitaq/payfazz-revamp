@@ -32,21 +32,21 @@
           </div>
 
           <div class="grid__col main-footer__col-three">
-            <h4 class="widget__title widget__title--mb-29"><?php _e( 'LAYANAN BANTUAN', 'payfazz' ); ?></h4>
+            <h4 class="widget__title widget__title--mb-26"><?php _e( 'LAYANAN BANTUAN', 'payfazz' ); ?></h4>
 
-            <ul class="main-footer__navigation main-footer__navigation--nml-6">
+            <ul class="main-footer__navigation main-footer__navigation--cs main-footer__navigation--nml-6">
               <li class="d-flex align-items-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-phone-black.svg" width="30" height="30">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-phone-black.svg" width="18" height="18">
                 021-5011-2000
               </li>
 
               <li class="d-flex align-items-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-email-black.svg" width="30" height="30">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-email-black.svg" width="18" height="18">
                 cs@payfazz.com
               </li>
 
               <li class="d-flex align-items-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-clock-black.svg" width="30" height="30">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-clock-black.svg" width="18" height="18">
                 Setiap hari (06:00 - 24:00)
               </li>
             </ul>
@@ -55,34 +55,34 @@
           <div class="grid__col main-footer__col-four">
             <h4 class="widget__title widget__title--mb-29"><?php _e( 'IKUTI KAMI', 'payfazz' ); ?></h4>
             
-            <ul class="main-footer__navigation main-footer__navigation--inline d-flex  main-footer__navigation--nml-12">
+            <ul class="main-footer__navigation main-footer__navigation--inline main-footer__navigation--share">
               <li>
                 <a href="<?php echo get_option( 'fazz_link_facebook' ); ?>" target="_blank" rel="noopener noreferrer" aria-label="payfazz instagram link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-facebook-black.svg" width="30" height="30">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-facebook-black.svg" width="18" height="18">
                 </a>
               </li>
 
               <li>
                 <a href="<?php echo get_option( 'fazz_link_twitter' ); ?>" target="_blank" rel="noopener noreferrer" aria-label="payfazz facebook link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-twitter-black.svg" width="30" height="30">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-twitter-black.svg" width="18" height="18">
                 </a>
               </li>
 
               <li>
                 <a href="<?php echo get_option( 'fazz_link_youtube' ); ?>" target="_blank" rel="noopener noreferrer" aria-label="payfazz youtube link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-youtube-black.svg" width="30" height="30">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-youtube-black.svg" width="18" height="18">
                 </a>
               </li>
 
               <li>
                 <a href="<?php echo get_option( 'fazz_link_instagram' ); ?>" target="_blank" rel="noopener noreferrer" aria-label="payfazz linkedin link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-instagram-black.svg" width="30" height="30">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-instagram-black.svg" width="18" height="18">
                 </a>
               </li>
               
               <li>
                 <a href="<?php echo get_option( 'fazz_link_linkedin' ); ?>" target="_blank" rel="noopener noreferrer" aria-label="payfazz twitter link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-linkedin-black.svg" width="30" height="30">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-linkedin-black.svg" width="18" height="18">
                 </a>
               </li>
             </ul>
@@ -113,7 +113,7 @@
                   'theme_location'  => 'footer-payfazz-secondary',
                   'container'       => null,
                   'container_class' => null,
-                  'menu_class'      => 'main-footer__navigation main-footer__navigation--inline d-flex',
+                  'menu_class'      => 'main-footer__navigation main-footer__navigation--inline main-footer__navigation--secondary',
                   'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                   'depth'           => 2,
                 );
