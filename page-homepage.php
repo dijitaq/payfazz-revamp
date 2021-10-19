@@ -92,9 +92,15 @@ get_header(); ?>
 </section>
 
 <section id="product" class="home-section home-section--product">
+  <div class="sequence-container" id="sequence-container">
+
+  </div>
+</section>
+
+<section class="home-section home-section--product">
   <div class="grid">
     <div class="grid__row">
-      <div class="grid__col d-flex home-section__col-6 home-section__offset-5 align-items-end vh-100">
+      <div class="grid__col d-flex home-section__col-6 home-section__offset-5 align-items-end">
         <div class="home-section__text-container">
           <h1 class="home-section__heading-one">Produk PAYFAZZ</h1>
 
