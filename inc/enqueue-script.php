@@ -13,6 +13,9 @@ function add_enqueue_scripts() {
   // wp_enqueue_script( 'scroll-trigger', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.4/ScrollTrigger.min.js', array(), 1.0, true );
   // general
   wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(),  wp_rand() );
+
+
   wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/main.bundle.js', array (), 1.1, true );
+  wp_localize_script( 'scripts', 'ajaxobject', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'add_enqueue_scripts' );
