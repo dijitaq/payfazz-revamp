@@ -92,8 +92,8 @@ get_header(); ?>
 </section>
 
 <section id="product" class="home-section home-section--product">
-  <div class="sequence-container" id="sequence-container">
-
+  <div class="sequence-container">
+    <img id="image-sequence">
   </div>
 </section>
 
