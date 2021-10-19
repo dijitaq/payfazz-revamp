@@ -91,6 +91,21 @@ get_header(); ?>
   </div>
 </section>
 
+<section id="product" class="home-section home-section--product">
+  <div class="grid">
+    <div class="grid__row">
+      <div class="grid__col d-flex home-section__col-6 home-section__offset-5 align-items-end vh-100">
+        <div class="home-section__text-container">
+          <h1 class="home-section__heading-one">Produk PAYFAZZ</h1>
+
+          <p class="home-section__paragraph">Kami membantu usaha berjalan lebih cepat dan besar. Milai dari menyediakan servis finansial, barang dagangan grosir, hingga servis pelanggan. Kami ada untuk kamu.</p>
+
+          <a class="button button--payfazz-blue button--home-product">PELAJARI LEBIH</a>
+        </div>
+      </div>
+    </div>
+</section>
+
 <div class="product-navigation d-flex align-items-center">
   <ul class="product-navigation__list">
     <li class="product-navigation__list-item" id="trigger-hero-image">
