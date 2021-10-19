@@ -19,8 +19,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "ScrollMagic": path.resolve( 'node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js' ),
-      'debug.addIdicators': path.resolve( 'node_modules',  'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIdicators.js' )
+      "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
+      "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+      "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
     }
   },
   plugins: [
