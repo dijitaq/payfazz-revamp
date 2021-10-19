@@ -22,7 +22,7 @@
                   'theme_location'  => 'footer-payfazz-primary',
                   'container'       => null,
                   'container_class' => null,
-                  'menu_class'      => 'main-footer__navigation',
+                  'menu_class'      => 'main-footer__navigation main-footer__navigation--primary',
                   'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                   'depth'           => 2,
                 );
@@ -34,7 +34,7 @@
           <div class="grid__col main-footer__col-three">
             <h4 class="widget__title widget__title--mb-26"><?php _e( 'LAYANAN BANTUAN', 'payfazz' ); ?></h4>
 
-            <ul class="main-footer__navigation main-footer__navigation--cs main-footer__navigation--nml-6">
+            <ul class="main-footer__navigation main-footer__navigation--cs">
               <li class="d-flex align-items-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/payfazz/icon-fazz-contact-phone-black.svg" width="18" height="18">
                 021-5011-2000
