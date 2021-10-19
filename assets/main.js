@@ -55,4 +55,9 @@ import ScrollMagic from "scrollmagic/scrollmagic/uncompressed/ScrollMagic";
 		//.addIndicators()
 		.addTo( controller );
 
+	//
+	window.addEventListener('load', (event) => {
+    //console.log( ajaxobject.data.assets );
+	});
+
 } )();

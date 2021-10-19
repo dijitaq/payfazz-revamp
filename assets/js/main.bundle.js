@@ -7619,6 +7619,11 @@ __webpack_require__.r(__webpack_exports__);
 		//.addIndicators()
 		.addTo( controller );
 
+	//
+	window.addEventListener('load', (event) => {
+    //console.log( ajaxobject.data.assets );
+	});
+
 } )();
 }();
 /******/ })()

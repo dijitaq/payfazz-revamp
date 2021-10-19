@@ -237,8 +237,8 @@ h4 {
 /* PAGE HOMEPAGE
 ** ------------------------------------ */
 .home-section {
-	background-color: $color-black-89;
-	border-bottom: 1px solid $color-black-54;
+	background-color: $color-black;
+	border-bottom: 1px solid $color-black-89;
 }
 
 .home-section__heading-one {
@@ -271,6 +271,15 @@ h4 {
 	margin-left: 41.6667%;
 }
 
+.sequence-container {
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+}
+
+//
 .product-navigation {
 	width: 0;
 	height: 100%;

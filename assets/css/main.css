@@ -1302,8 +1302,8 @@ h4 {
 /* PAGE HOMEPAGE
 ** ------------------------------------ */
 .home-section {
-  background-color: #1C1C1C;
-  border-bottom: 1px solid #757575;
+  background-color: #000000;
+  border-bottom: 1px solid #1C1C1C;
 }
 
 .home-section__heading-one {
@@ -1334,6 +1334,13 @@ h4 {
 
 .home-section__offset-5 {
   margin-left: 41.6667%;
+}
+
+.sequence-container {
+  width: 100%;
+}
+.sequence-container img {
+  width: 100%;
 }
 
 .product-navigation {
