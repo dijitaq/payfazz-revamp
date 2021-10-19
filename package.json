@@ -20,9 +20,11 @@
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.2",
+    "gsap": "^3.8.0",
     "gulp-environments": "^1.0.1",
     "jquery": "^3.6.0",
-    "scrollmagic": "^2.0.8"
+    "scrollmagic": "^2.0.8",
+    "scrollmagic-plugin-gsap": "^1.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.6",
