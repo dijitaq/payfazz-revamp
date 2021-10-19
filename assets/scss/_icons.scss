@@ -309,3 +309,29 @@
   background-image: url(../img/icon-payfazz-to-top.svg);
   background-size: contain;
 }
+
+
+//
+[class^="icon-main_nav-"] {
+  display: inherit;
+
+  a {
+    &:before {
+      content: "";
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 24px 48px;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+
+    &:hover {
+      &:before {
+        background-position: 0 -24px;
+      }
+    }
+  }
+}

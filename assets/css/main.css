@@ -1092,6 +1092,24 @@ a:active {
   background-size: contain;
 }
 
+[class^=icon-main_nav-] {
+  display: inherit;
+}
+[class^=icon-main_nav-] a:before {
+  content: "";
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 24px 48px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+[class^=icon-main_nav-] a:hover:before {
+  background-position: 0 -24px;
+}
+
 /* HEADINGS
 ** ------------------------------------ */
 h4 {
@@ -1125,13 +1143,13 @@ h4 {
   margin-right: 10px;
   position: relative;
 }
-.main-header__navigation > li > button {
+.main-header__navigation > li > a {
+  color: #FFFFFF;
+}
+.main-header__navigation > li > a button {
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-.main-header__navigation > li > a {
-  color: #FFFFFF;
 }
 .main-header__navigation > li.menu-item-has-children .dropdown-menu {
   display: none;
@@ -1149,18 +1167,30 @@ h4 {
 .main-header__navigation > li.menu-item-has-children .dropdown-menu.show {
   display: block;
 }
+.main-header__navigation > li.menu-item-has-children .dropdown-menu li.icon-main_nav-payfazz-agen a:before {
+  background-image: url(../img/payfazz/icon-main_nav-payfazz-agen.svg);
+}
+.main-header__navigation > li.menu-item-has-children .dropdown-menu li.icon-main_nav-payfazz-masteragen a:before {
+  background-image: url(../img/payfazz/icon-main_nav-payfazz-masteragen.svg);
+}
+.main-header__navigation > li.menu-item-has-children .dropdown-menu li.icon-main_nav-payfazz-mobile a:before {
+  background-image: url(../img/payfazz/icon-main_nav-payfazz-mobile.svg);
+}
 .main-header__navigation > li.menu-item-has-children .dropdown-menu li a {
   display: block;
   padding-left: 56px;
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: relative;
 }
 .main-header__navigation > li.menu-item-has-children .dropdown-menu li a:hover {
+  color: #3B8EF3;
   background-color: #F5F5F5;
 }
 .main-header__navigation > li.menu-item-has-children .dropdown-menu li a .description {
   font-size: 15px;
+  color: #1C1C1C;
   display: block;
   width: 300px;
 }
@@ -1226,12 +1256,21 @@ h4 {
 .main-footer__navigation.main-footer__navigation--inline li {
   margin-bottom: 0;
 }
+.main-footer__navigation.main-footer__navigation--primary a {
+  display: block;
+}
 .main-footer__navigation.main-footer__navigation--secondary {
   margin-right: -30px;
 }
 .main-footer__navigation.main-footer__navigation--secondary li {
   margin-left: 30px;
   margin-right: 30px;
+}
+.main-footer__navigation.main-footer__navigation--cs {
+  margin-left: 3px;
+}
+.main-footer__navigation.main-footer__navigation--cs img {
+  margin-right: 12px;
 }
 .main-footer__navigation.main-footer__navigation--share {
   margin-left: -13px;
@@ -1264,6 +1303,7 @@ h4 {
 ** ------------------------------------ */
 .home-section {
   background-color: #1C1C1C;
+  border-bottom: 1px solid #757575;
 }
 
 .home-section__heading-one {
@@ -1313,6 +1353,10 @@ h4 {
 .product-navigation__list-item {
   margin-top: 28px;
   margin-bottom: 28px;
+}
+
+.button--home-product {
+  margin-bottom: 100px;
 }
 
 .product-navigation__list-item--active .product-navigation__link {

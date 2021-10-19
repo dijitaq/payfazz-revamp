@@ -12,10 +12,6 @@ $color-black-12: #E0E0E0;
 $color-black-4: #F5F5F5;
 $color-white: #FFFFFF;
 
-$color-product-payfazz: #3B8EF3;
-$color-product-masteragen: #1B4180;
-$color-secondary-masteragen: #F2C900;
-
 $color-lightgrey: #F2F4F5;
 
 // theme colors
@@ -34,7 +30,7 @@ $colors: (
 	'color-black-12': $color-black-12,
 	'color-white': $color-white,
 	'color-payfazz-blue': $color-payfazz-blue,
-	'color-dark-blue': $color-product-masteragen,
+	'color-dark-blue': $color-dark-blue,
 	'color-yellow': $color-yellow,
 	'color-green': $color-green
 );
