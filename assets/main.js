@@ -2,9 +2,11 @@
 //import * as bootstrap from 'bootstrap';
 import 'bootstrap/js/dist/dropdown';
 import ScrollMagic from 'scrollmagic';
-import { TweenMax, TimelineMax } from 'gsap'; // What to import from gsap
+import gsap from 'gsap';
+import { TweenMax, TimelineMax, ScrollToPlugin } from 'gsap/all'; // What to import from gsap
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+gsap.registerPlugin( ScrollToPlugin );
+ScrollMagicPluginGsap( ScrollMagic, TweenMax, TimelineMax );
 
 
 ( function () {
@@ -63,6 +65,16 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 		//.addIndicators()
 		.addTo( controller );
 
+	document.addEventListener( 'click', function( event ) {
+		if ( !event.target.matches( '.product-navigation__link' ) ) return;
+
+		event.preventDefault();
+
+		var id = event.target.id;
+
+		gsap.to( window, { duration: 0.5, scrollTo: id } );
+	} );
+
 	/*
 	window.addEventListener('load', (event) => {
     console.log( ajaxobject.data.assets.length );
@@ -88,8 +100,6 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 	new ScrollMagic.Scene( { triggerElement: '#product' } )
 		//.addIndicators()
 		.duration( 500 )
-		.triggerHook( "onLeave" )
-		.setPin( '#product' )
 		.setTween( tween )
 		.addTo( controller );
 
