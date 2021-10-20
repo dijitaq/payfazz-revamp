@@ -95,9 +95,7 @@ get_header(); ?>
   <div class="sequence-container">
     <img id="image-sequence">
   </div>
-</section>
 
-<section class="home-section home-section--product">
   <div class="grid">
     <div class="grid__row">
       <div class="grid__col d-flex home-section__col-6 home-section__offset-5 align-items-end">
@@ -115,31 +113,31 @@ get_header(); ?>
 <div class="product-navigation d-flex align-items-center">
   <ul class="product-navigation__list">
     <li class="product-navigation__list-item" id="trigger-hero-image">
-      <a class="product-navigation__link">
+      <a class="product-navigation__link" id="#hero-image">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-payment">
-      <a class="product-navigation__link">
+      <a class="product-navigation__link" id="#payment">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-capital">
-      <a class="product-navigation__link">
+      <a class="product-navigation__link" id="#capital">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-cash">
-      <a class="product-navigation__link">
+      <a class="product-navigation__link" id="#cash">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-loyalty">
-      <a class="product-navigation__link">
+      <a class="product-navigation__link" id="#loyalty">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
