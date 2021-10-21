@@ -1397,6 +1397,16 @@ a:active {
     left: calc(100vw - 200px);
   }
 }
+.popover-arrow {
+  display: none;
+}
+
+.popover-body {
+  font-size: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
 /* PAGE PRODUCT
 ** ------------------------------------ */
 .product-section {
@@ -1405,6 +1415,7 @@ a:active {
 }
 
 .product-section--testimonial {
+  padding-top: 140px;
   padding-bottom: 140px;
 }
 /*# sourceMappingURL=main.css.map */
