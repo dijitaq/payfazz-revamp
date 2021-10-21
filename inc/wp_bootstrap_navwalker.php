@@ -37,7 +37,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
 		public function start_lvl( &$output, $depth = 0, $args = null ) {
-			$output .= '<ul role="menu" class="dropdown-menu">';
+			$output .= '<ul role="menu" class="dropdown-menu" aria-labelledby="menu-item-' . $this->curItem->ID . '">';
 		}
 
 		/**
@@ -61,6 +61,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * comparison that is not case sensitive. The strcasecmp() function returns
 			 * a 0 if the strings are equal.
 			 */
+			$this->curItem = $item;
+
 			if ( 0 === strcasecmp( $item->attr_title, 'divider' ) && 1 === $depth ) {
 				$output .= '<li role="presentation" class="divider">';
 			} elseif ( 0 === strcasecmp( $item->title, 'divider' ) && 1 === $depth ) {
@@ -101,10 +103,10 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 				// If item has_children add atts to a.
 				if ( $args->has_children && 0 === $depth ) {
-					$atts['href']           = '#';
-					$atts['data-bs-toggle'] = 'dropdown';
-					$atts['class']          = 'nav-link dropdown-toggle';
-					$atts['aria-expanded']  = 'false';
+					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
+					//$atts['data-bs-toggle'] = 'dropdown';
+					//$atts['class']          = 'nav-link dropdown-toggle';
+					//$atts['aria-expanded']  = 'false';
 				} else {
 					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 					if ( $depth > 0 ) {
@@ -151,7 +153,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
       	}
 
       	
-				$item_output .= ( $args->has_children && 0 === $depth ) ? ' <button><i class="icon-menu-arrow-down-white"></i></button></a>' : '</a>';
+				$item_output .= ( $args->has_children && 0 === $depth ) ? ' </a><button class="dropdown-toggle dropdown-toggle-split" type="button" id="menu-item-' . $item->ID . '" data-bs-toggle="dropdown" data-bs-reference="parent" aria-expanded="false"><i class="icon-menu-arrow-down"></i></button>' : '</a>';
 				$item_output .= $args->after;
 				$output      .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 			}
