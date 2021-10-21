@@ -24,7 +24,8 @@
     "gulp-environments": "^1.0.1",
     "jquery": "^3.6.0",
     "scrollmagic": "^2.0.8",
-    "scrollmagic-plugin-gsap": "^1.0.4"
+    "scrollmagic-plugin-gsap": "^1.0.4",
+    "swiper": "^7.0.9"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.6",
