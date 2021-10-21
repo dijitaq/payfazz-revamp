@@ -1028,18 +1028,6 @@ a:active {
   background: url(../img/masteragen/icon-post-link-masteragen.svg) no-repeat center;
 }
 
-.icon-menu-arrow-down {
-  width: 12px;
-  height: 12px;
-  background: url(../img/masteragen/icon-menu-arrow-down.svg) no-repeat center;
-}
-
-.icon-menu-arrow-down-white {
-  width: 12px;
-  height: 12px;
-  background: url(../img/masteragen/icon-menu-arrow-down-white.svg) no-repeat center;
-}
-
 [class^=icon-payfazz-socmed] {
   width: 16px;
   height: 16px;
@@ -1110,19 +1098,19 @@ a:active {
   background-position: 0 -24px;
 }
 
-/* HEADINGS
-** ------------------------------------ */
-h4 {
-  font-size: 1.25rem;
-}
-
 /* HEADER
 ** ------------------------------------ */
 .main-header {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   position: fixed;
   z-index: 1000;
+}
+
+.main-header--white {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .main-header__logo {
@@ -1146,7 +1134,7 @@ h4 {
 .main-header__navigation > li > a {
   color: #FFFFFF;
 }
-.main-header__navigation > li > a button {
+.main-header__navigation > li > button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -1196,6 +1184,20 @@ h4 {
 }
 .main-header__navigation > li.pll-parent-menu-item ul a {
   padding-left: 20px !important;
+}
+.main-header__navigation .icon-menu-arrow-down {
+  width: 12px;
+  height: 12px;
+  background: url(../img/masteragen/icon-menu-arrow-down-white.svg) no-repeat center;
+}
+
+.main-header__navigation--white > li > a {
+  color: #1C1C1C;
+}
+.main-header__navigation--white .icon-menu-arrow-down {
+  width: 12px;
+  height: 12px;
+  background: url(../img/masteragen/icon-menu-arrow-down.svg) no-repeat center;
 }
 
 /* Footer
@@ -1394,5 +1396,15 @@ h4 {
   .product-navigation {
     left: calc(100vw - 200px);
   }
+}
+/* PAGE PRODUCT
+** ------------------------------------ */
+.product-section {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.product-section--testimonial {
+  padding-bottom: 140px;
 }
 /*# sourceMappingURL=main.css.map */
