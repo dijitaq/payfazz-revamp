@@ -113,31 +113,31 @@ get_header(); ?>
 <div class="product-navigation d-flex align-items-center">
   <ul class="product-navigation__list">
     <li class="product-navigation__list-item" id="trigger-hero-image">
-      <a class="product-navigation__link" id="#hero-image">
+      <a class="product-navigation__link" id="#hero-image" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Intro">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-payment">
-      <a class="product-navigation__link" id="#payment">
+      <a class="product-navigation__link" id="#payment" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Payment">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-capital">
-      <a class="product-navigation__link" id="#capital">
+      <a class="product-navigation__link" id="#capital" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Capital">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-cash">
-      <a class="product-navigation__link" id="#cash">
+      <a class="product-navigation__link" id="#cash" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Cash">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>
 
     <li class="product-navigation__list-item" id="trigger-loyalty">
-      <a class="product-navigation__link" id="#loyalty">
+      <a class="product-navigation__link" id="#loyalty" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Loyalty">
         <!--<span class="product-navigation__text">Intro</span>-->
       </a>
     </li>

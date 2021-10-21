@@ -98,3 +98,11 @@
     left: calc(100vw - 200px);
   }
 }
+
+.popover-arrow { display: none; }
+
+.popover-body {
+	font-size: 14px;
+	color: $color-white;
+	text-transform: uppercase;
+}
