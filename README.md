@@ -11,11 +11,12 @@
 
 ## Technology
 
-* [Bootstrap](https://github.com/twbs/bootstrap), [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* [Sass](https://github.com/sass/sass), [MIT license](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
-* [gulp](https://github.com/gulpjs/gulp), [MIT license](https://github.com/gulpjs/gulp/blob/master/LICENSE)
-* [webpack](https://github.com/webpack/webpack), [MIT license](https://github.com/webpack/webpack/blob/master/LICENSE)
-* [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [Sass](https://github.com/sass/sass)
+* [gulp](https://github.com/gulpjs/gulp)
+* [webpack](https://github.com/webpack/webpack)
+* [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 
 * [GSAP](https://github.com/greensock/GSAP)
 * [ScrollMagic](https://github.com/janpaepke/ScrollMagic)
+* [Swiper](https://github.com/nolimits4web/swiper)
