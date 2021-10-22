@@ -13,3 +13,9 @@
 	color: $color-white;
 	background-color: $color-payfazz-blue;
 }
+
+.button-outline--payfazz-blue {
+	color: $color-payfazz-blue;
+	background-color: $color-white;
+	border: 1px solid $color-payfazz-blue;
+}
