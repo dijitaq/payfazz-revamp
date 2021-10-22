@@ -11,6 +11,9 @@ if ( ! function_exists( 'add_setup_theme' ) ) {
     add_theme_support( 'custom-logo' );
     add_theme_support( 'post-thumbnails' );
 
+    //
+    add_image_size( 'testimoni-thumbnail', 80, 80 );
+
     // sementara diremove, karen menimpulkan error dihalaman dashboard widget
     remove_theme_support( 'widgets-block-editor' );
 
