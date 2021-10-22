@@ -5,8 +5,11 @@ import ScrollMagic from 'scrollmagic';
 import gsap from 'gsap';
 import { TweenMax, TimelineMax, ScrollToPlugin } from 'gsap/all'; // What to import from gsap
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
+import Swiper, { Navigation, Pagination } from 'swiper';
+
 gsap.registerPlugin( ScrollToPlugin );
 ScrollMagicPluginGsap( ScrollMagic, TweenMax, TimelineMax );
+Swiper.use([Navigation, Pagination]);
 
 
 ( function () {
@@ -30,6 +33,18 @@ ScrollMagicPluginGsap( ScrollMagic, TweenMax, TimelineMax );
 		} );
 	} );
 
+	// product page
+	var swiper = new Swiper( "#testimonial-swiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+	// home page
 	if ( document.body.classList.contains( 'page-template-page-homepage' ) ) {
 		var heroImagePopover = new Popover( document.getElementById( '#hero-image' ), {
 		  container: document.getElementById( '#hero-image' )

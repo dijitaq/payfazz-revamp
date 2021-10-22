@@ -5,6 +5,18 @@
 	border-bottom: 1px solid $color-black-89;
 }
 
+.home-section__col-6 {
+	width: 50%;
+}
+
+.home-section__offset-5 {
+	margin-left: 41.6667%;
+}
+
+.home-section__offset-6 {
+	margin-left: 50%;
+}
+
 .home-section__heading-one {
 	font-size: 70px;
 	font-weight: 700;
@@ -25,14 +37,6 @@
 .home-section__title-product {
 	font-size: 14px;
 	text-transform: uppercase;
-}
-
-.home-section__col-6 {
-	width: 50%;
-}
-
-.home-section__offset-5 {
-	margin-left: 41.6667%;
 }
 
 .sequence-container {

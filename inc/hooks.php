@@ -149,4 +149,4 @@ function wpb_add_googleanalytics() { ?>
   })(window,document,'script','dataLayer','GTM-M55JM99');</script>
   <!-- End Google Tag Manager -->
 <?php }
-add_action('wp_head', 'wpb_add_googleanalytics');
+//add_action('wp_head', 'wpb_add_googleanalytics');
