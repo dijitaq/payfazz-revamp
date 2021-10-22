@@ -3,6 +3,7 @@
 .main-header {
   background-color: rgba($color-black, 0.4);
   width: 100%;
+  border-bottom: none;
   backdrop-filter: blur(20px);
   position: fixed;
   z-index: 1000;
@@ -10,6 +11,7 @@
 
 .main-header--white {
   background-color: rgba($color-white, 0.4);
+  border-bottom: 1px solid $color-black-12;
 }
 
 .main-header__logo {
