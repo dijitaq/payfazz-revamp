@@ -38527,19 +38527,27 @@ swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MOD
     return new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Popover(popoverTriggerEl, {
       trigger: 'focus'
     });
-  }); // product page
+  });
+  /* Only run on product page
+  ** ------------------------------------ */
 
-  var swiper = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]("#testimonial-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    }
-  }); // home page
+  if (document.body.classList.contains('page-template-page-product')) {
+    var swiper = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]("#testimonial-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      }
+    });
+  }
+  /* Only run on home page
+  ** ------------------------------------ */
+
 
   if (document.body.classList.contains('page-template-page-homepage')) {
+    // create popover instances for product navigation
     var heroImagePopover = new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Popover(document.getElementById('#hero-image'), {
       container: document.getElementById('#hero-image')
     });
@@ -38554,9 +38562,11 @@ swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MOD
     });
     var loyaltyPopover = new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Popover(document.getElementById('#loyalty'), {
       container: document.getElementById('#loyalty')
-    });
+    }); // variables
+
     var duration = window.innerHeight;
-    var controller = new (scrollmagic__WEBPACK_IMPORTED_MODULE_1___default().Controller)();
+    var controller = new (scrollmagic__WEBPACK_IMPORTED_MODULE_1___default().Controller)(); // Create Scroll Magic scenes for each products
+
     new (scrollmagic__WEBPACK_IMPORTED_MODULE_1___default().Scene)({
       triggerElement: '#hero-image'
     }).duration(duration).setClassToggle('#trigger-hero-image', 'product-navigation__list-item--active').on('enter', function () {
@@ -38591,7 +38601,8 @@ swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MOD
       loyaltyPopover.show();
     }).on('leave', function () {
       loyaltyPopover.hide();
-    }).addTo(controller);
+    }).addTo(controller); // event for product navigation
+
     document.addEventListener('click', function (event) {
       if (!event.target.matches('.product-navigation__link')) return;
       event.preventDefault();
@@ -38601,29 +38612,43 @@ swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MOD
         scrollTo: id
       });
     });
-    /*
-    window.addEventListener('load', (event) => {
-       console.log( ajaxobject.data.assets.length );
-    });*/
+    /* Phone animation
+    ** ------------------------------------ */
+    // wait until document is ready to load data
 
-    var image_sequence = document.getElementById('image-sequence');
-    var images = ajaxobject.data.assets;
-    var obj = {
-      currentImg: 0
-    };
-    var tween = new gsap_all__WEBPACK_IMPORTED_MODULE_6__.TweenMax.to(obj, 1, {
-      currentImg: images.length - 1,
-      roundProps: "currentImg",
-      repeat: 0,
-      immediateRender: true,
-      onUpdate: function () {
-        image_sequence.src = images[obj.currentImg].p;
-      }
-    });
-    new (scrollmagic__WEBPACK_IMPORTED_MODULE_1___default().Scene)({
-      triggerElement: '#product'
-    }) //.addIndicators()
-    .duration(500).setTween(tween).addTo(controller);
+    document.addEventListener('DOMContentLoaded', load_animation_data, false); // load animation data method
+
+    function load_animation_data() {
+      fetch(ajaxobject.directory + 'assets/json/payfazz-suites-15fps-2880.json', {
+        method: 'get',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      }).then(response => response.json()).then(json => run_animation(json)).catch(err => console.log(err));
+    } // run animation data method
+
+
+    function run_animation(data) {
+      //console.log( json );
+      var image_sequence = document.getElementById('image-sequence');
+      var images = data.assets;
+      var obj = {
+        currentImg: 0
+      };
+      var tween = new gsap_all__WEBPACK_IMPORTED_MODULE_6__.TweenMax.to(obj, 1, {
+        currentImg: images.length - 1,
+        roundProps: "currentImg",
+        repeat: 0,
+        immediateRender: true,
+        onUpdate: function () {
+          image_sequence.src = images[obj.currentImg].p;
+        }
+      });
+      new (scrollmagic__WEBPACK_IMPORTED_MODULE_1___default().Scene)({
+        triggerElement: '#product'
+      }) //.addIndicators()
+      .duration(500).setTween(tween).addTo(controller);
+    }
   }
 })();
 }();
