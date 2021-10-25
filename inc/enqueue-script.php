@@ -39,7 +39,8 @@ function add_enqueue_scripts() {
 
   wp_localize_script( 'scripts', 'ajaxobject', array( 
       'ajaxurl' => admin_url( 'admin-ajax.php' ),
-      'data' => $data
+      'data' => $data,
+      'directory' => $directory,
     )
   );
 }

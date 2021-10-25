@@ -33,19 +33,24 @@ Swiper.use([Navigation, Pagination]);
 		} );
 	} );
 
-	// product page
-	var swiper = new Swiper( "#testimonial-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+	/* Only run on product page
+	** ------------------------------------ */
+	if ( document.body.classList.contains( 'page-template-page-product' ) ) {
+		var swiper = new Swiper( "#testimonial-swiper", {
+	    slidesPerView: 3,
+	    spaceBetween: 30,
+	    centeredSlides: true,
+	    pagination: {
+	      el: ".swiper-pagination",
+	      clickable: true,
+	    },
+	  });
+	}
 
-	// home page
+	/* Only run on home page
+	** ------------------------------------ */
 	if ( document.body.classList.contains( 'page-template-page-homepage' ) ) {
+		// create popover instances for product navigation
 		var heroImagePopover = new Popover( document.getElementById( '#hero-image' ), {
 		  container: document.getElementById( '#hero-image' )
 		});
@@ -66,9 +71,11 @@ Swiper.use([Navigation, Pagination]);
 		  container: document.getElementById( '#loyalty' )
 		});
 
+		// variables
 		var duration = window.innerHeight;
 		var controller = new ScrollMagic.Controller();
 
+		// Create Scroll Magic scenes for each products
 		new ScrollMagic.Scene( { triggerElement: '#hero-image' } )
 			.duration( duration )
 			.setClassToggle( '#trigger-hero-image', 'product-navigation__list-item--active' )
@@ -134,6 +141,7 @@ Swiper.use([Navigation, Pagination]);
 			} )
 			.addTo( controller );
 
+		// event for product navigation
 		document.addEventListener( 'click', function( event ) {
 			if ( !event.target.matches( '.product-navigation__link' ) ) return;
 
@@ -144,17 +152,37 @@ Swiper.use([Navigation, Pagination]);
 			gsap.to( window, { duration: 0.5, scrollTo: id } );
 		} );
 
-		/*
-		window.addEventListener('load', (event) => {
-	    console.log( ajaxobject.data.assets.length );
-		});*/
-		var image_sequence = document.getElementById( 'image-sequence' );
 
-		var images = ajaxobject.data.assets;
+		/* Phone animation
+		** ------------------------------------ */
+		// wait until document is ready to load data
+		document.addEventListener('DOMContentLoaded', load_animation_data, false);
 
-		var obj = { currentImg: 0 };
+		// load animation data method
+		function load_animation_data() {
+			fetch( ajaxobject.directory + 'assets/json/payfazz-suites-15fps-2880.json', {
+				method: 'get',
+				headers: new Headers( {
+					'Content-Type': 'application/json'
+				} ),
 
-		var tween = new TweenMax.to( obj, 1,
+			} )
+			.then( response => response.json() )
+			.then( json => run_animation( json ) )
+			.catch( err => console.log( err ) );
+		}
+
+		// run animation data method
+		function run_animation( data ) {
+			//console.log( json );
+
+			var image_sequence = document.getElementById( 'image-sequence' );
+
+			var images = data.assets;
+
+			var obj = { currentImg: 0 };
+
+			var tween = new TweenMax.to( obj, 1,
 				{
 					currentImg: images.length - 1,
 					roundProps: "currentImg",
@@ -166,11 +194,12 @@ Swiper.use([Navigation, Pagination]);
 				}
 			);
 
-		new ScrollMagic.Scene( { triggerElement: '#product' } )
-			//.addIndicators()
-			.duration( 500 )
-			.setTween( tween )
-			.addTo( controller );
+			new ScrollMagic.Scene( { triggerElement: '#product' } )
+				//.addIndicators()
+				.duration( 500 )
+				.setTween( tween )
+				.addTo( controller );
+		}
 	}
 
 } )();
