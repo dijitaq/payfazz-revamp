@@ -6,7 +6,7 @@ get_header(); ?>
 <section id="hero-image" class="home-section home-section--hero-image">
   <div class="grid">
     <div class="grid__row">
-      <div class="col d-flex home-section__col-6 home-section__offset-5 align-items-center vh-100">
+      <div class="grid__col grid__col--6 grid__offset--5 d-flex align-items-center vh-100">
         <div class="home-section__text-container">
           <h1 class="home-section__heading-one">Enabling merchants to sell and earn more.</h1>
 
@@ -58,7 +58,7 @@ get_header(); ?>
 <section id="cash" class="home-section home-section--cash">
   <div class="grid">
     <div class="grid__row">
-      <div class="col d-flex home-section__col-6 home-section__offset-5 align-items-center vh-100">
+      <div class="grid__col grid__col--6 grid__offset--5 d-flex align-items-center vh-100">
         <div class="home-section__text-container">
           <p class="home-section__title-product text-color--yellow">Payfazz Master Agen</p>
 
@@ -76,7 +76,7 @@ get_header(); ?>
 <section id="loyalty" class="home-section home-section--loyalty">
   <div class="grid">
     <div class="grid__row">
-      <div class="col d-flex home-section__col-6 align-items-center vh-100">
+      <div class="grid__col grid__col--6  d-flex align-items-center vh-100">
         <div class="home-section__text-container">
           <p class="home-section__title-product text-color--green">Payfazz Mobile</p>
 
@@ -98,7 +98,7 @@ get_header(); ?>
 
   <div class="grid">
     <div class="grid__row">
-      <div class="grid__col d-flex home-section__col-6 home-section__offset-5 align-items-end">
+      <div class="grid__col grid__col--6  d-flex grid__offset--5 align-items-end">
         <div class="home-section__text-container">
           <h1 class="home-section__heading-one">Produk PAYFAZZ</h1>
 
