@@ -6,63 +6,50 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<?php
-			if ( 'post' === get_post_type() ) :
-		?>
-			<div class="entry-meta">
-				<?php payfazz_revamp_article_posted_on(); ?>
-			</div><!-- /.entry-meta -->
-		<?php
-			endif;
-		?>
-	</header><!-- /.entry-header -->
-	<div class="entry-content">
-		<?php
-			if ( has_post_thumbnail() ) :
-				echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
-			endif;
+	
+<section class="single-section single-section__hero-image">
+	<div class="grid">
+		<div class="grid__row">
+			<div class="grid__col grid__col--12">
+				<?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
+			</div>
+		</div>
+	</div>
+</section>
 
-			the_content();
+<section class="single-section single-section__content">
+	<div class="grid">
+		<div class="grid__row justify-content-between">
+			<div class="grid__col grid__col--4">
+				<p class="single-section__content__paragraph--page">PRESS RELEASE</p>
 
-			wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'payfazz-revamp' ) . '</span>', 'after' => '</div>' ) );
-		?>
-	</div><!-- /.entry-content -->
+				<h2 class="single-section__content__header-two"><?php echo get_the_title(); ?></h2>
 
-	<?php
-		edit_post_link( __( 'Edit', 'payfazz-revamp' ), '<span class="edit-link">', '</span>' );
-	?>
+				<hr class="single-section__content__hr">
 
-	<footer class="entry-meta">
-		<hr>
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'payfazz-revamp' ) );
+				<ul class="share-navigation share-navigation--inline">
+					<?php echo payfazz_share_post( get_permalink() ); ?>
+				</ul>
+			</div>
 
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'payfazz-revamp' ) );
-			if ( '' != $tag_list ) :
-				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'payfazz-revamp' );
-			elseif ( '' != $category_list ) :
-				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'payfazz-revamp' );
-			else :
-				$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'payfazz-revamp' );
-			endif;
+			<div class="grid__col grid__col--7">
+				<?php echo get_the_content(); ?>
+			</div>
+		</div>
+</section>
 
-			printf(
-				$utility_text,
-				$category_list,
-				$tag_list,
-				esc_url( get_the_permalink() ),
-				the_title_attribute( 'echo=0' ),
-				get_the_author(),
-				esc_url( get_author_posts_url( (int) get_the_author_meta( 'ID' ) ) )
-			);
-		?>
-		<hr>
-		<?php
-			get_template_part( 'author', 'bio' );
-		?>
-	</footer><!-- /.entry-meta -->
+<section class="single-section single-section__related">
+	<div class="grid">
+  	<div class="grid__row">
+  		<div class="grid__col">
+  			<h3 class="single-section__content__header-three">Related News</h3>
+  		</div>
+  	</div>
+
+    <div class="grid__row">
+      <?php payfazz_revamp_related_post( 'press', 'press_categories', 'template-parts/content-post' ); ?>
+    </div>
+  </div>
+</section>
+
 </article><!-- /#post-<?php the_ID(); ?> -->

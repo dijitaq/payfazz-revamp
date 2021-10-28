@@ -1,0 +1,68 @@
+/* PAGE SINGLE
+** ------------------------------------ */
+.single-section {
+
+}
+
+.single-section__hero-image {
+  padding-top: 90px;
+  margin-bottom: 40px;
+}
+
+.single-section__content {
+  margin-bottom: 142px;
+}
+
+.single-section__related {
+  margin-bottom: 217px;
+}
+
+.single-section__content__paragraph--page {
+  font-size: 14px;
+  color: $color-payfazz-blue;
+  margin-bottom: 8px;
+}
+
+.single-section__content__header-two {
+  margin-bottom: 38px;
+}
+
+.single-section__content__header-three {
+  margin-bottom: 16px;
+}
+
+.single-section__content__hr {
+  border-bottom: 1px solid $color-black-12;
+  margin-bottom: 24px;
+}
+
+.share-navigation {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.share-navigation--inline {
+  margin-left: -14px;
+  display: -webkit-box !important;
+    display: -ms-flexbox !important;
+      display: flex !important;
+
+  li {
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 0;
+
+    b {
+      display: block;
+      line-height: inherit;
+      vertical-align: baseline;
+    }
+
+    a {
+      vertical-align: baseline;
+      display: block;
+    }
+  }
+}
