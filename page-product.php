@@ -1,7 +1,7 @@
  <?php 
 /* Template Name: Page Product */ 
 
-get_header( 'product' ); ?>
+get_header( 'white' ); ?>
 
 <section class="product-section product-section__hero-image">
   <div class="grid postition-relative">
@@ -162,7 +162,6 @@ and start growing your business with Modal PAYFAZZ.</p>
   <?php $testimoni = new WP_Query( array ( 
     'post_type'       => 'testimoni', 
     'posts_per_page'  => 10, 
-    'no_found_rows'   => true,
     'meta_query'      => array(
       array(
           'key'     => 'testimoni_product',
@@ -202,7 +201,7 @@ and start growing your business with Modal PAYFAZZ.</p>
 
       <div class="swiper-pagination"></div>
     </div>
-  <?php endif; ?>
+  <?php endif; wp_reset_query(); ?>
 </section>
 
 <?php get_footer(); ?>

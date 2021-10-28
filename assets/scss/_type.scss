@@ -26,6 +26,10 @@ h2 {
   font-size: 2.5rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
 /* Paragraf
 ** ------------------------------------ */
 p {
@@ -58,7 +62,7 @@ a {
   color: inherit;
   display: inline-block;
   vertical-align: middle;
-  line-height: 1.5;
+  line-height: inherit;
 }
 a,
 a:hover,

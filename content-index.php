@@ -15,7 +15,7 @@
 			?>
 				<div class="card-text entry-meta">
 					<?php
-						payfazz_revamp_article_posted_on();
+						//payfazz_revamp_article_posted_on();
 
 						$num_comments = get_comments_number();
 						if ( comments_open() && $num_comments >= 1 ) :

@@ -33,6 +33,7 @@ if ( ! function_exists( 'add_setup_theme' ) ) {
       'agen-header'               => __( 'Header Agen', 'payfazz' ),
       'buku-header'               => __( 'Header Buku', 'payfazz' ),
       'buku-footer'               => __( 'Footer Buku', 'payfazz' ),
+      'press-release-category'    => __( 'Press Release category', 'payfazz' ),
     ) );
   }
 }

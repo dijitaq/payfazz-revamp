@@ -4,6 +4,8 @@
 ** link@ https://developer.wordpress.org/themes/basics/including-css-javascript/
 **/
 function add_enqueue_scripts() {
+  global $wp_query; 
+
   $theme_version = wp_get_theme()->get( 'Version' );
 
   // slick 
@@ -23,11 +25,6 @@ function add_enqueue_scripts() {
   wp_enqueue_script( 'add-ajaxobject' );
   wp_enqueue_script( 'scripts', $directory . 'assets/js/main.bundle.js', array(), $theme_version, true  );
 
-  //
-  $url = $directory . 'assets/json/payfazz-suites-15fps-2880.json';
-
-  $request = wp_remote_get( $url, array( 'sslverify' => FALSE ) );
-
   if ( is_wp_error( $request ) ) {
       return false; // Bail early
   }
@@ -41,6 +38,7 @@ function add_enqueue_scripts() {
       'ajaxurl' => admin_url( 'admin-ajax.php' ),
       'data' => $data,
       'directory' => $directory,
+      'max' => $wp_query->max_num_pages
     )
   );
 }

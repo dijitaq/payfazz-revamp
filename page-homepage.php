@@ -22,7 +22,7 @@ get_header(); ?>
 <section id="payment" class="home-section home-section--payment">
   <div class="grid">
     <div class="grid__row justify-content-center">
-      <div class="col d-flex home-section__col-6 align-items-center vh-100">
+      <div class="grid__col grid__col--6 d-flex align-items-center vh-100">
         <div class="home-section__text-container text-center">
           <p class="home-section__title-product text-color--payfazz-blue">Payfazz Agen</p>
 
@@ -40,7 +40,7 @@ get_header(); ?>
 <section id="capital" class="home-section home-section--capital">
   <div class="grid">
     <div class="grid__row">
-      <div class="col d-flex home-section__col-6 align-items-center vh-100">
+      <div class="grid__col grid__col--6 d-flex align-items-center vh-100">
         <div class="home-section__text-container">
           <p class="home-section__title-product text-color--payfazz-blue">Payfazz Agen</p>
 
