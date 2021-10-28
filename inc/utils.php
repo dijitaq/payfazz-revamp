@@ -23,11 +23,12 @@ function breadcrumb($path, $title) {
  * @param string $size
  * 
  */
-function custom_excerpt() {
+function custom_excerpt( $length ) {
   if ( has_excerpt() ) {
     return the_excerpt();
+
   } else {
-    echo wp_trim_words( get_the_content(), 20, '' );
+    echo wp_trim_words( get_the_content(), $length, '' );
   }
 }
 
