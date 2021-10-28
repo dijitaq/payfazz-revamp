@@ -38528,6 +38528,50 @@ swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MOD
       trigger: 'focus'
     });
   });
+  /* Load more posts
+  ** ------------------------------------ */
+
+  document.addEventListener('click', function (event) {
+    if (!event.target.matches('#load-more-posts-trigger')) return;
+    event.preventDefault();
+    let data = new FormData();
+    console.log("current: " + ajaxobject.current_page);
+    console.log("max: " + ajaxobject.max_page);
+    data.append("action", "ajax_load_more");
+    data.append("query", ajaxobject.posts);
+    data.append("page", ajaxobject.current_page);
+    const queryString = new URLSearchParams(data).toString();
+    fetch(ajaxobject.ajaxurl + "?action=ajax_load_more", {
+      method: 'post',
+      body: queryString,
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      })
+    }).then(function (response) {
+      // The API call was successful!
+      return response.text();
+    }).then(function (html) {
+      var container = document.getElementById('article-container');
+      console.log(html); // Convert the HTML string into a document object
+
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var articles = doc.querySelectorAll('article');
+
+      for (var i = 0; i < articles.length; i++) {
+        if (articles[i].innerHTML !== "") {
+          container.appendChild(articles[i]);
+        }
+      }
+
+      ajaxobject.current_page++;
+
+      if (ajaxobject.current_page == ajaxobject.max_page) {
+        var button = document.getElementById('load-more-posts-trigger');
+        button.classList.add('disabled');
+      }
+    }).catch(err => console.log(err));
+  });
   /* Only run on product page
   ** ------------------------------------ */
 

@@ -69,3 +69,9 @@ a:hover,
 a:active {
   text-decoration: none;
 }
+
+a.disabled {
+  background-color: $color-black-14;
+  cursor: default;
+  pointer-events: none;
+}

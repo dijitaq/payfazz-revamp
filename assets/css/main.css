@@ -889,6 +889,12 @@ a:active {
   text-decoration: none;
 }
 
+a.disabled {
+  background-color: #DBDBDB;
+  cursor: default;
+  pointer-events: none;
+}
+
 [class^=icon-] {
   display: inline-block;
   vertical-align: middle;
