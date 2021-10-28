@@ -74,6 +74,40 @@ function payfazz_related_post( $post_type, $taxonomy, $title, $template = 'templ
 }
 
 
+/**
+ * Payfazz revamp related post
+*/
+function payfazz_revamp_related_post( $post_type, $taxonomy, $template ) {
+  //global $post;
+
+  //Get array of terms
+  $terms = wp_get_post_terms( get_queried_object_id() , $taxonomy, ['fields' => 'ids'] );
+  
+  if ( $terms ) {
+    $related_args = array(
+      'post_type'       => $post_type,
+      'tax_query'       => array(
+        array(
+          'taxonomy'    => $taxonomy,
+          'terms'       => $terms,
+        )),
+      'post__not_in'    => array( get_queried_object_id() ),
+      'post_status'     => 'publish',
+      'posts_per_page'  => 4,
+    );
+
+    $related_query = new WP_Query( $related_args );
+
+    if( $related_query->have_posts() ) {
+      while ( $related_query->have_posts() ) : $related_query->the_post();
+        get_template_part( $template );
+      endwhile;
+    }
+
+    wp_reset_query();
+  }
+}
+
 
 /**
  * Share post
@@ -91,13 +125,11 @@ function payfazz_share_post( $permalink ) {
   $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$contentURL;
 
   // Add sharing button at the end of page/page content
-  $content .= '<ul class="list list--inline list--share clr-black-100">';
   $content .= '<li><b>Share</b></li>';
   $content .= '<li><a aria-label="share on facebook" rel="noreferrer" href="'. $facebookURL .'" target="_blank"><i class="icon-fontello-facebook"></i></a></li>';
   $content .= '<li><a aria-label="share on twitter" rel="noreferrer" href="'.$twitterURL.'" target="_blank"><i class="icon-fontello-twitter"></i></a></li>';
   $content .= '<li><a aria-label="share on twitter" rel="noreferrer" href="'.$linkedInURL.'" target="_blank"><i class="icon-fontello-linkedin"></i></a></li>';
   wp_is_mobile() ? $content .= '<li><a class="btn_media_share" aria-label="share" rel="noreferrer" href="#"><i class="icon-fontello-share "></i></a></li>' : null;
-  $content .= '</ul>';
   return $content;
 }
 
