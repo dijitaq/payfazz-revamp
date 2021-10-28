@@ -710,6 +710,10 @@ img {
 
 /* FORM
 ** ------------------------------------ */
+[type=text], [type=email], [type=search] {
+  height: 48px;
+}
+
 .input-group {
   position: relative;
   display: -webkit-box;
@@ -725,7 +729,6 @@ img {
 
 .form-control {
   width: 100%;
-  height: 48px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2056,6 +2059,60 @@ a:active {
 .share-navigation--inline li a {
   vertical-align: baseline;
   display: block;
+}
+
+/* PAGE CONTACT
+** ------------------------------------ */
+.contact-section__header-one {
+  margin-bottom: 20px;
+}
+
+.contact-section__header-three {
+  margin-bottom: 4px;
+}
+
+.contact-section__paragraph {
+  color: #585858;
+  margin-bottom: 38px;
+}
+
+.contact-section__form-control__input {
+  margin-bottom: 12px;
+}
+
+.contact-section__form-control__textarea {
+  margin-bottom: 15px;
+}
+
+.contact-section__hr {
+  margin: auto;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.contact-section__hero-image {
+  padding-top: 157px;
+}
+
+.contact-section__hero-image__paragraph {
+  margin-bottom: 38px;
+}
+
+.contact_section__hero-image__hr {
+  width: 136px;
+  margin-bottom: 97px;
+}
+
+.contact-section__content {
+  margin-bottom: 203px;
+}
+
+.contact-section__content__paragraph--address {
+  line-height: 1.875;
+  margin-bottom: 30px;
+}
+
+.contact-section__content__hr {
+  margin-bottom: 30px;
 }
 
 @font-face {

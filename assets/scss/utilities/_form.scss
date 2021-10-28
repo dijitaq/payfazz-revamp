@@ -1,6 +1,10 @@
 /* FORM
 ** ------------------------------------ */
 
+[type="text"], [type="email"], [type="search"] {
+  height: 48px;
+}
+
 .input-group {
   position: relative;
   display: flex;
@@ -11,7 +15,6 @@
 
 .form-control {
   width: 100%;
-  height: 48px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
