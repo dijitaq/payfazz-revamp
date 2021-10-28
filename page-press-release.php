@@ -40,7 +40,7 @@ get_header( 'white' ); ?>
       'post_type'       => 'press',
       'categories'      => array( 'press_categories' ),
       'post_status'     => 'publish',
-      'posts_per_page'  => 8,
+      'posts_per_page'  => 4,
       'paged'           => $paged,
     );
 
@@ -48,8 +48,10 @@ get_header( 'white' ); ?>
   ?>
 
   <div class="grid">
-    <div class="grid__row justify-content-center">
+    <div id="article-container" class="grid__row justify-content-center">
       <?php if ( $query_archive->have_posts() ) : ?>
+        <?php add_enqueue_scripts( $query_archive );  ?>
+
         <?php while ( $query_archive->have_posts() ) : $query_archive->the_post(); ?>
 
           <?php get_template_part( 'template-parts/content', 'post' ); ?>
@@ -61,7 +63,7 @@ get_header( 'white' ); ?>
   <div class="grid_row">
     <div class="grid__col grid__col--12 d-flex justify-content-center">
       <?php if ( $query_archive->max_num_pages > 1 ) : ?>
-        <a class="button button--payfazz-blue archive-section__load-more">Load more</a>
+        <a id="load-more-posts-trigger" class="button button--payfazz-blue archive-section__load-more">Load more</a>
       <?php endif; ?>
     </div>
   </div>

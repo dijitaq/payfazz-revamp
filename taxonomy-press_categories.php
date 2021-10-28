@@ -19,7 +19,10 @@ get_header( 'white' ); ?>
       </div>
 
       <div class="grid__col grid__col--12 d-flex justify-content-center">
-        <?php $path_name = get_queried_object()->name; ?>
+        <?php
+          $path_name = get_queried_object()->name;
+          $slug = get_queried_object()->slug;
+        ?>
         <?php $categories = get_terms( 'press_categories' ); ?>
 
         <ul class="category-navigation category-navigation--inline d-flex">
@@ -42,7 +45,7 @@ get_header( 'white' ); ?>
         array(
           'taxonomy'    => 'press_categories',
           'field'       => 'slug',
-          'terms'       => array( $path_name ),
+          'terms'       => array( $slug ),
           'operator'    => 'IN' //Or 'AND' or 'NOT IN'
         )),
       'post_status'     => 'publish',
@@ -56,6 +59,8 @@ get_header( 'white' ); ?>
   <div class="grid">
     <div class="grid__row justify-content-center">
       <?php if ( $query_archive->have_posts() ) : ?>
+        <?php add_enqueue_scripts( $query_archive );  ?>
+
         <?php while ( $query_archive->have_posts() ) : $query_archive->the_post(); ?>
 
           <?php get_template_part( 'template-parts/content', 'post' ); ?>
